@@ -6,10 +6,13 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: centos-70
+  - name: ubuntu-13.10
 
 suites:
   - name: default
     run_list:
       - "recipe[neo4j-docker]"
     attributes:
+      neo4j:
+        config:
+          cache_type: none
