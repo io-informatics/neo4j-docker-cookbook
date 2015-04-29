@@ -16,3 +16,11 @@ suites:
       neo4j:
         config:
           cache_type: none
+  - name: default-javaTunning
+    run_list:
+      - "recipe[neo4j-docker]"
+    attributes:
+      neo4j:
+        java:
+          initmemory: 512k
+          maxmemory: 2g
