@@ -24,7 +24,7 @@ template "#{node[:neo4j][:config_path]}/neo4j.properties" do
 	notifies :restart, "service[neo4j]", :delayed
 end
 template "#{node[:neo4j][:config_path]}/neo4j-wrapper.conf" do
-	source "neo4j-warpper.conf.erb"
+	source "neo4j-wrapper.conf.erb"
 	variables :java => node[:neo4j][:java]
 	action :create
 	notifies :restart, "service[neo4j]", :delayed
