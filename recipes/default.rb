@@ -33,7 +33,7 @@ end
 # Run the docker container
 docker_container "neo4j" do
 	action :run
-	image node[:neo4j][:docker_image]
+	image "#{node[:neo4j][:docker_image]}:#{node[:neo4j][:docker_image_tag]}"
 	container_name node[:neo4j][:docker_container]
 	detach true
 	port ['7474:7474', '1337:1337']
